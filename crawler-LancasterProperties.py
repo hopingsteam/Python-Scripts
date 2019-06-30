@@ -77,6 +77,10 @@ def downloadPDF(url, propertyID, propertyNumber):
     request = browser.session.get(url, stream=True)
     content = request.content
 
+    folderPath = "PDFs"
+    if not os.path.exists(folderPath):
+        os.mkdir(folderPath)
+
     if b"Error occured" in content:
         print("[Crawler ERROR]: Could not download PDF from property #" + str(propertyID))
     else:

@@ -62,7 +62,7 @@ def main():
         maxPage = getMaxPage(judet)
         print("Parcurgem judetul " + judet + " (" + maxPage + " pagini totale)")
 
-        for page in range(1, int(maxPage)):
+        for page in range(1, int(maxPage) + 1):
             linkURL = "http://static.bacalaureat.edu.ro/2018/rapoarte/" + judet + "/lista_unitati/page_" + str(page) + ".html"
             parcurgePagina(linkURL, judet)
 
